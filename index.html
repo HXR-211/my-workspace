@@ -6,8 +6,8 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: #f8f9fa;
-            color: #1a1a2e;
+            background: #f5f3f0;
+            color: #4a4540;
             padding: 20px;
             min-height: 100vh;
             line-height: 1.5;
@@ -18,9 +18,9 @@
 
         /* 头部 */
         .header { text-align: center; margin-bottom: 20px; }
-        .header h1 { font-size: 24px; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
-        .header .subtitle { font-size: 13px; color: #6b7280; }
-        .countdown { color: #ef4444; font-weight: 600; }
+        .header h1 { font-size: 24px; font-weight: 600; color: #4a4540; margin-bottom: 6px; }
+        .header .subtitle { font-size: 13px; color: #a39c93; }
+        .countdown { color: #b07a72; font-weight: 600; }
 
         /* Tab 切换 */
         .tabs {
@@ -28,7 +28,7 @@
             justify-content: center;
             gap: 8px;
             margin-bottom: 24px;
-            border-bottom: 2px solid #e5e7eb;
+            border-bottom: 2px solid #e6e2dc;
             padding-bottom: 0;
         }
         .tab-btn {
@@ -37,16 +37,16 @@
             background: transparent;
             font-size: 15px;
             font-weight: 500;
-            color: #6b7280;
+            color: #a39c93;
             cursor: pointer;
             border-bottom: 3px solid transparent;
             transition: all 0.2s;
             margin-bottom: -2px;
         }
-        .tab-btn:hover { color: #1a1a2e; }
+        .tab-btn:hover { color: #4a4540; }
         .tab-btn.active {
-            color: #1a1a2e;
-            border-bottom-color: #4f46e5;
+            color: #4a4540;
+            border-bottom-color: #8a8a7d;
             font-weight: 600;
         }
         .tab-content { display: none; }
@@ -63,14 +63,14 @@
         .month-btn {
             width: 36px; height: 36px;
             border: none; border-radius: 50%;
-            background: #1a1a2e; color: #fff;
+            background: #4a4540; color: #fff;
             font-size: 16px; cursor: pointer;
             transition: all 0.2s;
             display: flex; align-items: center; justify-content: center;
         }
-        .month-btn:hover { background: #374151; transform: scale(1.05); }
+        .month-btn:hover { background: #5a544c; transform: scale(1.05); }
         .month-display {
-            font-size: 20px; font-weight: 600; color: #1a1a2e;
+            font-size: 20px; font-weight: 600; color: #4a4540;
             min-width: 80px; text-align: center;
         }
 
@@ -81,7 +81,7 @@
         }
         .legend-item {
             display: flex; align-items: center; gap: 6px;
-            font-size: 12px; color: #6b7280;
+            font-size: 12px; color: #a39c93;
         }
         .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
 
@@ -93,26 +93,26 @@
         }
         .weekday {
             text-align: center; font-size: 11px; font-weight: 600;
-            color: #9ca3af; padding: 8px 4px;
+            color: #a39c93; padding: 8px 4px;
             text-transform: uppercase; letter-spacing: 0.5px;
         }
 
         /* 日期格子 */
         .day {
-            background: #fff; border-radius: 8px;
+            background: #faf9f7; border-radius: 8px;
             min-height: 110px; padding: 8px 6px;
             display: flex; flex-direction: column; gap: 4px;
-            transition: all 0.15s; border: 1px solid #f3f4f6;
+            transition: all 0.15s; border: 1px solid #e6e2dc;
         }
         .day.empty { background: transparent; border: none; }
         .day-num {
-            font-size: 13px; font-weight: 500; color: #374151;
+            font-size: 13px; font-weight: 500; color: #5a544c;
             width: 24px; height: 24px;
             display: flex; align-items: center; justify-content: center;
         }
-        .day.today { background: #e0e7ff; border-color: #e0e7ff; }
+        .day.today { background: #eceae4; border-color: #eceae4; }
         .day.today .day-num {
-            background: #4f46e5; color: #fff;
+            background: #8a8a7d; color: #fff;
             border-radius: 50%; font-weight: 700;
         }
 
@@ -125,9 +125,9 @@
         }
         .event-label { font-weight: 600; font-size: 12px; opacity: 0.9; }
         .event-name { flex: 1; overflow: hidden; text-overflow: ellipsis; }
-        .event.guangha { background: #ede9fe; color: #6d28d9; }
-        .event.sanya { background: #dbeafe; color: #1d4ed8; }
-        .event.geren { background: #fef3c7; color: #b45309; }
+        .event.guangha { background: #efe9e0; color: #9c8f7a; }
+        .event.sanya { background: #e3eeee; color: #7a9a9c; }
+        .event.geren { background: #f6eef4; color: #b08aa8; }
         .event.done { filter: saturate(0.45) brightness(1.15); }
         .event.done .event-label { opacity: 0.7; }
         .event.done .event-name { opacity: 0.75; text-decoration: line-through; }
@@ -135,43 +135,43 @@
         /* 任务汇总表 */
         .section { max-width: 840px; margin: 28px auto 0; }
         .section-title {
-            font-size: 14px; font-weight: 600; color: #1a1a2e;
+            font-size: 14px; font-weight: 600; color: #4a4540;
             margin-bottom: 12px; padding-bottom: 8px;
-            border-bottom: 2px solid #1a1a2e;
+            border-bottom: 2px solid #4a4540;
         }
         table {
-            width: 100%; border-collapse: collapse; background: #fff;
+            width: 100%; border-collapse: collapse; background: #faf9f7;
             border-radius: 8px; overflow: hidden;
-            border: 1px solid #f3f4f6;
+            border: 1px solid #e6e2dc;
         }
         th {
-            background: #f9fafb; color: #6b7280;
+            background: #f0eee9; color: #a39c93;
             font-size: 13px; font-weight: 600;
             padding: 12px 14px; text-align: left;
             text-transform: uppercase; letter-spacing: 0.5px;
         }
         td {
             padding: 12px 14px; font-size: 14px;
-            border-bottom: 1px solid #f3f4f6; color: #374151;
+            border-bottom: 1px solid #e6e2dc; color: #5a544c;
         }
         tr:last-child td { border-bottom: none; }
-        tr:hover td { background: #f9fafb; }
+        tr:hover td { background: #f0eee9; }
         .badge {
             display: inline-block; padding: 2px 8px;
             border-radius: 4px; font-size: 11px; font-weight: 500;
         }
-        .badge-normal { background: #dbeafe; color: #1d4ed8; }
-        .badge-done { background: #ede9fe; color: #a78bfa; text-decoration: line-through; }
+        .badge-normal { background: #e3eeee; color: #7a9a9c; }
+        .badge-done { background: #efe9e0; color: #9c8f7a; text-decoration: line-through; }
         .project-tag {
             display: inline-block; font-size: 10px; font-weight: 600;
             padding: 2px 6px; border-radius: 3px; margin-right: 6px;
         }
-        .tag-guangha { background: #ede9fe; color: #6d28d9; }
-        .tag-sanya { background: #dbeafe; color: #1d4ed8; }
-        .tag-geren { background: #fef3c7; color: #b45309; }
+        .tag-guangha { background: #efe9e0; color: #9c8f7a; }
+        .tag-sanya { background: #e3eeee; color: #7a9a9c; }
+        .tag-geren { background: #f6eef4; color: #b08aa8; }
         .empty-table {
             text-align: center; padding: 32px;
-            color: #9ca3af; font-size: 13px;
+            color: #a39c93; font-size: 13px;
         }
 
         /* ===== 记账日历 ===== */
@@ -191,26 +191,26 @@
         }
         .expense-item .ei-note {
             flex: 1; overflow: hidden; text-overflow: ellipsis;
-            color: #374151;
+            color: #5a544c;
         }
         .expense-item .ei-amt {
             font-weight: 600; flex-shrink: 0; font-size: 11px;
         }
         .expense-total-day {
-            font-size: 12px; font-weight: 700; color: #b91c1c;
+            font-size: 12px; font-weight: 700; color: #b07a72;
             margin-top: 4px; padding-top: 3px;
-            border-top: 1px dashed #fecaca;
+            border-top: 1px dashed #e0c8c4;
         }
         .expense-grand-total {
             text-align: center; margin: 16px 0 0;
-            font-size: 14px; color: #6b7280;
+            font-size: 14px; color: #a39c93;
         }
         .expense-grand-total .amt {
-            font-size: 22px; font-weight: 700; color: #b91c1c;
+            font-size: 22px; font-weight: 700; color: #b07a72;
             margin-left: 6px;
         }
         .expense-grand-total .cnt {
-            font-size: 12px; color: #9ca3af; margin-left: 8px;
+            font-size: 12px; color: #a39c93; margin-left: 8px;
         }
 
         /* ===== 记账看板 ===== */
@@ -227,21 +227,21 @@
             grid-template-columns: 1fr 1fr 1fr;
         }
         .card {
-            background: #fff; border-radius: 12px;
-            padding: 20px; border: 1px solid #f3f4f6;
+            background: #faf9f7; border-radius: 12px;
+            padding: 20px; border: 1px solid #e6e2dc;
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
         .card-title {
-            font-size: 13px; font-weight: 600; color: #6b7280;
+            font-size: 13px; font-weight: 600; color: #a39c93;
             margin-bottom: 12px; text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         .big-number {
-            font-size: 32px; font-weight: 700; color: #1a1a2e;
+            font-size: 32px; font-weight: 700; color: #4a4540;
         }
-        .big-number .currency { font-size: 18px; color: #6b7280; margin-right: 4px; }
-        .big-number .unit { font-size: 16px; color: #6b7280; margin-left: 4px; }
-        .sub-text { font-size: 12px; color: #9ca3af; margin-top: 4px; }
+        .big-number .currency { font-size: 18px; color: #a39c93; margin-right: 4px; }
+        .big-number .unit { font-size: 16px; color: #a39c93; margin-left: 4px; }
+        .sub-text { font-size: 12px; color: #a39c93; margin-top: 4px; }
 
         /* 环形图 */
         .donut-container {
@@ -256,8 +256,8 @@
             transform: translate(-50%, -50%);
             text-align: center;
         }
-        .donut-center .label { font-size: 11px; color: #9ca3af; }
-        .donut-center .value { font-size: 18px; font-weight: 700; color: #1a1a2e; }
+        .donut-center .label { font-size: 11px; color: #a39c93; }
+        .donut-center .value { font-size: 18px; font-weight: 700; color: #4a4540; }
         .donut-legend {
             flex: 1; display: flex; flex-direction: column; gap: 6px;
         }
@@ -266,30 +266,30 @@
             font-size: 12px;
         }
         .donut-legend-item .dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-        .donut-legend-item .name { flex: 1; color: #374151; }
-        .donut-legend-item .amt { font-weight: 600; color: #1a1a2e; }
-        .donut-legend-item .pct { color: #9ca3af; font-size: 11px; margin-left: 4px; }
+        .donut-legend-item .name { flex: 1; color: #5a544c; }
+        .donut-legend-item .amt { font-weight: 600; color: #4a4540; }
+        .donut-legend-item .pct { color: #a39c93; font-size: 11px; margin-left: 4px; }
 
         /* 柱状图 */
         .bar-chart {
             display: flex; align-items: flex-end; gap: 2px;
             height: 160px; padding-top: 10px;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e6e2dc;
             position: relative;
         }
         .bar {
-            flex: 1; background: #ef4444; border-radius: 3px 3px 0 0;
+            flex: 1; background: #8a8a7d; border-radius: 3px 3px 0 0;
             position: relative; min-height: 2px;
             transition: all 0.2s;
             cursor: pointer;
         }
-        .bar:hover { background: #dc2626; }
-        .bar.today { background: #4f46e5; }
-        .bar.today:hover { background: #4338ca; }
+        .bar:hover { background: #9a9a8d; }
+        .bar.today { background: #b07a72; }
+        .bar.today:hover { background: #c08a82; }
         .bar-tooltip {
             position: absolute; bottom: 100%; left: 50%;
             transform: translateX(-50%);
-            background: #1a1a2e; color: #fff;
+            background: #4a4540; color: #fff;
             padding: 4px 8px; border-radius: 4px;
             font-size: 11px; white-space: nowrap;
             opacity: 0; pointer-events: none;
@@ -301,7 +301,7 @@
             display: flex; gap: 2px; margin-top: 4px;
         }
         .bar-axis div {
-            flex: 1; text-align: center; font-size: 10px; color: #9ca3af;
+            flex: 1; text-align: center; font-size: 10px; color: #a39c93;
         }
 
         /* 类别明细列表 */
@@ -313,18 +313,18 @@
             font-size: 18px; width: 28px; text-align: center;
         }
         .category-row .cat-info { flex: 1; }
-        .category-row .cat-name { font-size: 13px; font-weight: 500; color: #1a1a2e; }
+        .category-row .cat-name { font-size: 13px; font-weight: 500; color: #4a4540; }
         .category-row .cat-bar {
-            height: 6px; border-radius: 3px; background: #f3f4f6;
+            height: 6px; border-radius: 3px; background: #e6e2dc;
             margin-top: 4px; overflow: hidden;
         }
         .category-row .cat-bar-fill { height: 100%; border-radius: 3px; }
         .category-row .cat-amount {
-            font-size: 13px; font-weight: 600; color: #1a1a2e;
+            font-size: 13px; font-weight: 600; color: #4a4540;
             min-width: 80px; text-align: right;
         }
         .category-row .cat-count {
-            font-size: 11px; color: #9ca3af; min-width: 40px; text-align: right;
+            font-size: 11px; color: #a39c93; min-width: 40px; text-align: right;
         }
 
         /* 消费明细列表 */
@@ -333,22 +333,22 @@
         }
         .expense-detail-item {
             display: flex; align-items: center; gap: 12px;
-            padding: 10px 0; border-bottom: 1px solid #f3f4f6;
+            padding: 10px 0; border-bottom: 1px solid #e6e2dc;
         }
         .expense-detail-item:last-child { border-bottom: none; }
         .expense-detail-item .date {
-            font-size: 11px; color: #9ca3af; min-width: 50px;
+            font-size: 11px; color: #a39c93; min-width: 50px;
         }
         .expense-detail-item .cat-tag {
             font-size: 11px; padding: 2px 6px; border-radius: 3px;
             min-width: 50px; text-align: center;
         }
         .expense-detail-item .note {
-            flex: 1; font-size: 13px; color: #374151;
+            flex: 1; font-size: 13px; color: #5a544c;
             overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
         }
         .expense-detail-item .amt {
-            font-size: 13px; font-weight: 600; color: #b91c1c;
+            font-size: 13px; font-weight: 600; color: #b07a72;
         }
     </style>
 </head>
@@ -376,11 +376,11 @@
     </div>
 
     <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#6d28d9"></div>广哈</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#1d4ed8"></div>三亚</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#b45309"></div>个人</div>
-        <div class="legend-item" style="color:#9ca3af">|</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#d1d5db"></div>已完成</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#9c8f7a"></div>广哈</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#7a9a9c"></div>三亚</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#b08aa8"></div>个人</div>
+        <div class="legend-item" style="color:#a39c93">|</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#cfc8bd"></div>已完成</div>
     </div>
 
     <div class="calendar" id="calendarGrid">
@@ -478,7 +478,7 @@
     <div class="section" style="margin-top:0">
         <div class="section-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
             <span>👩 妈妈的账单</span>
-            <span style="font-size:12px;font-weight:400;color:#6b7280">导出自钱迹 · 2025-04 至 2026-05</span>
+            <span style="font-size:12px;font-weight:400;color:#a39c93">导出自钱迹 · 2025-04 至 2026-05</span>
         </div>
         <div id="momBillContainer"></div>
     </div>
@@ -514,7 +514,7 @@ const expenseCategories = {
     beauty:    { name: '美妆', color: '#d946ef', icon: '💄' },
     snack:     { name: '零饮', color: '#14b8a6', icon: '🥤' },
     coffee:    { name: '咖啡', color: '#6f4e37', icon: '☕' },
-    other:     { name: '其他', color: '#6b7280', icon: '📦' }
+    other:     { name: '其他', color: '#a39c93', icon: '📦' }
 };
 
 // ===== 妈妈的账单数据 =====
@@ -584,18 +584,18 @@ function renderMomBill() {
     // 按年份分组（倒序）
     const years = Object.keys(yearStats).sort().reverse();
 
-    let html = '<div style="margin-bottom:16px;display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:#374151">' +
+    let html = '<div style="margin-bottom:16px;display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:#5a544c">' +
         '<span>总收入：<strong style="color:#10b981">¥' + totalIncome.toFixed(2) + '</strong>（' + incomeCount + '笔）</span>' +
         '<span>总支出：<strong style="color:#ef4444">¥' + totalExpense.toFixed(2) + '</strong>（' + expenseCount + '笔）</span>' +
         '<span style="font-weight:500">净余：<strong style="color:#3b82f6">¥' + (totalIncome - totalExpense).toFixed(2) + '</strong></span>' +
         '</div>' +
         '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px">' +
-        '<thead><tr style="background:#f3f4f6">' +
-        '<th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e5e7eb;white-space:nowrap">日期</th>' +
-        '<th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e5e7eb">分类</th>' +
-        '<th style="padding:8px 10px;text-align:center;border-bottom:2px solid #e5e7eb">类型</th>' +
-        '<th style="padding:8px 10px;text-align:right;border-bottom:2px solid #e5e7eb;white-space:nowrap">金额</th>' +
-        '<th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e5e7eb">备注</th>' +
+        '<thead><tr style="background:#e6e2dc">' +
+        '<th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e6e2dc;white-space:nowrap">日期</th>' +
+        '<th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e6e2dc">分类</th>' +
+        '<th style="padding:8px 10px;text-align:center;border-bottom:2px solid #e6e2dc">类型</th>' +
+        '<th style="padding:8px 10px;text-align:right;border-bottom:2px solid #e6e2dc;white-space:nowrap">金额</th>' +
+        '<th style="padding:8px 10px;text-align:left;border-bottom:2px solid #e6e2dc">备注</th>' +
         '</tr></thead><tbody>';
 
     years.forEach(year => {
@@ -603,9 +603,9 @@ function renderMomBill() {
         const net = s.income - s.expense;
         const netColor = net >= 0 ? '#3b82f6' : '#ef4444';
         const netSign = net >= 0 ? '' : '-';
-        html += '<tr style="background:#f9fafb"><td colspan="5" style="padding:6px 10px;border-bottom:1px solid #e5e7eb;font-size:12px">' +
-            '<strong style="color:#1a1a2e">' + year + '年</strong>' +
-            '<span style="color:#6b7280;margin-left:12px">收入 <span style="color:#10b981;font-weight:500">¥' + s.income.toFixed(2) + '</span> · ' +
+        html += '<tr style="background:#f0eee9"><td colspan="5" style="padding:6px 10px;border-bottom:1px solid #e6e2dc;font-size:12px">' +
+            '<strong style="color:#4a4540">' + year + '年</strong>' +
+            '<span style="color:#a39c93;margin-left:12px">收入 <span style="color:#10b981;font-weight:500">¥' + s.income.toFixed(2) + '</span> · ' +
             '支出 <span style="color:#ef4444;font-weight:500">¥' + s.expense.toFixed(2) + '</span> · ' +
             '净余 <span style="color:' + netColor + ';font-weight:500">¥' + netSign + Math.abs(net).toFixed(2) + '</span></span></td></tr>';
 
@@ -616,11 +616,11 @@ function renderMomBill() {
             const typeLabel = r.type === 'income' ? '收入' : '支出';
             const note = r.note ? r.note : '';
             const amountStr = r.amount.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            html += '<tr><td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;white-space:nowrap">' + r.date + '</td>' +
-                '<td style="padding:6px 10px;border-bottom:1px solid #f3f4f6">' + r.category + '</td>' +
-                '<td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:center;color:' + color + '">' + typeLabel + '</td>' +
-                '<td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;text-align:right">' + amountStr + '</td>' +
-                '<td style="padding:6px 10px;border-bottom:1px solid #f3f4f6;color:#6b7280">' + note + '</td></tr>';
+            html += '<tr><td style="padding:6px 10px;border-bottom:1px solid #e6e2dc;white-space:nowrap">' + r.date + '</td>' +
+                '<td style="padding:6px 10px;border-bottom:1px solid #e6e2dc">' + r.category + '</td>' +
+                '<td style="padding:6px 10px;border-bottom:1px solid #e6e2dc;text-align:center;color:' + color + '">' + typeLabel + '</td>' +
+                '<td style="padding:6px 10px;border-bottom:1px solid #e6e2dc;text-align:right">' + amountStr + '</td>' +
+                '<td style="padding:6px 10px;border-bottom:1px solid #e6e2dc;color:#a39c93">' + note + '</td></tr>';
         });
     });
 
@@ -1025,7 +1025,7 @@ function renderDonut(catStats, total) {
     legend.innerHTML = '';
 
     if (total === 0) {
-        donut.style.background = '#f3f4f6';
+        donut.style.background = '#e6e2dc';
         const center = document.createElement('div');
         center.className = 'donut-center';
         center.innerHTML = '<div class="label">暂无</div><div class="value">¥0.00</div>';
@@ -1113,7 +1113,7 @@ function renderCategoryList(catStats, total) {
     const sortedCats = Object.keys(catStats).sort((a, b) => catStats[b].total - catStats[a].total);
 
     if (sortedCats.length === 0) {
-        list.innerHTML = '<div style="text-align:center;color:#9ca3af;padding:20px;font-size:13px;">暂无消费记录</div>';
+        list.innerHTML = '<div style="text-align:center;color:#a39c93;padding:20px;font-size:13px;">暂无消费记录</div>';
         return;
     }
 
@@ -1138,7 +1138,7 @@ function renderExpenseDetail(monthExpenses) {
     const list = document.getElementById('expenseDetailList');
     list.innerHTML = '';
     if (monthExpenses.length === 0) {
-        list.innerHTML = '<div style="text-align:center;color:#9ca3af;padding:20px;font-size:13px;">暂无消费记录</div>';
+        list.innerHTML = '<div style="text-align:center;color:#a39c93;padding:20px;font-size:13px;">暂无消费记录</div>';
         return;
     }
     const sorted = [...monthExpenses].sort((a, b) => {
