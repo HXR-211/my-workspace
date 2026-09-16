@@ -128,6 +128,7 @@
         .event.guangha { background: #e2d5c5; color: #7a6548; }
         .event.sanya { background: #c8dcd8; color: #4a7a7c; }
         .event.geren { background: #e8d0dc; color: #8a5a82; }
+        .event.aike { background: #d3dae8; color: #55628c; }
         .event.done { filter: saturate(0.45) brightness(1.15); }
         .event.done .event-label { opacity: 0.7; }
         .event.done .event-name { opacity: 0.75; text-decoration: line-through; }
@@ -169,6 +170,7 @@
         .tag-guangha { background: #e2d5c5; color: #7a6548; }
         .tag-sanya { background: #c8dcd8; color: #4a7a7c; }
         .tag-geren { background: #e8d0dc; color: #8a5a82; }
+        .tag-aike { background: #d3dae8; color: #55628c; }
         .empty-table {
             text-align: center; padding: 32px;
             color: #8a8279; font-size: 13px;
@@ -378,6 +380,7 @@
     <div class="legend">
         <div class="legend-item"><div class="legend-dot" style="background:#7a6548"></div>广哈</div>
         <div class="legend-item"><div class="legend-dot" style="background:#4a7a7c"></div>三亚</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#55628c"></div>艾科</div>
         <div class="legend-item"><div class="legend-dot" style="background:#8a5a82"></div>个人</div>
         <div class="legend-item" style="color:#8a8279">|</div>
         <div class="legend-item"><div class="legend-dot" style="background:#cfc8bd"></div>已完成</div>
@@ -842,7 +845,16 @@ let tasks = [
     { id: 95, name: "授权书、承诺书", project: "guangha", day: 12, month: 8, status: "normal", deadline: "08.12" },
     { id: 96, name: "发邮件换负责人", project: "sanya", day: 10, month: 8, status: "normal", deadline: "08.10" },
     // 08.08 个人记录
-    { id: 97, name: "带区回家吃饭", project: "geren", day: 8, month: 8, status: "done", deadline: "08.08（已完成）" }
+    { id: 97, name: "带区回家吃饭", project: "geren", day: 8, month: 8, status: "done", deadline: "08.08（已完成）" },
+    // 09.16 任务（周三）
+    { id: 98, name: "艾科项目方案审查文件", project: "aike", day: 16, month: 9, status: "done", deadline: "09.16（已完成）" },
+    { id: 99, name: "艾科标高", project: "aike", day: 16, month: 9, status: "normal", deadline: "09.16" },
+    { id: 100, name: "艾科面层", project: "aike", day: 16, month: 9, status: "normal", deadline: "09.16" },
+    { id: 101, name: "艾科设备研究", project: "aike", day: 16, month: 9, status: "normal", deadline: "09.16" },
+    { id: 102, name: "五金变更", project: "sanya", day: 16, month: 9, status: "normal", deadline: "09.16" },
+    { id: 103, name: "13#反坎", project: "sanya", day: 16, month: 9, status: "normal", deadline: "09.16" },
+    { id: 104, name: "15#五金", project: "sanya", day: 16, month: 9, status: "normal", deadline: "09.16" },
+    { id: 105, name: "显示器维修", project: "geren", day: 16, month: 9, status: "normal", deadline: "09.16" }
 ];
 
 // 状态映射
@@ -915,7 +927,7 @@ function renderCalendar() {
             const event = document.createElement('div');
             const statusInfo = statusMap[task.status] || statusMap.normal;
             event.className = `event ${task.project} ${statusInfo.calendarClass}`;
-            const labelMap = { guangha: '广哈', sanya: '三亚', geren: '个人' };
+            const labelMap = { guangha: '广哈', sanya: '三亚', aike: '艾科', geren: '个人' };
             const label = labelMap[task.project] || '';
             event.innerHTML = `<span class="event-label">${label}</span><span class="event-name">${task.name}</span>`;
             day.appendChild(event);
@@ -931,14 +943,14 @@ function renderTable() {
         tbody.innerHTML = '<tr><td colspan="3" class="empty-table">🎉 所有任务已完成！</td></tr>';
         return;
     }
-    const projectOrder = { guangha: 0, sanya: 1, geren: 2 };
+    const projectOrder = { guangha: 0, sanya: 1, aike: 2, geren: 3 };
     const sortedTasks = [...activeTasks].sort((a, b) =>
         (projectOrder[a.project] || 99) - (projectOrder[b.project] || 99)
     );
     sortedTasks.forEach(task => {
         const tr = document.createElement('tr');
         const statusInfo = statusMap[task.status] || statusMap.normal;
-        const labelMap = { guangha: '广哈', sanya: '三亚', geren: '个人' };
+        const labelMap = { guangha: '广哈', sanya: '三亚', aike: '艾科', geren: '个人' };
         const label = labelMap[task.project] || '';
         tr.innerHTML = `
             <td><span class="project-tag tag-${task.project}">${label}</span>${task.name}</td>
