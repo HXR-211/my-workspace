@@ -129,6 +129,7 @@
         .event.sanya { background: #c8dcd8; color: #4a7a7c; }
         .event.geren { background: #e8d0dc; color: #8a5a82; }
         .event.aike { background: #d3dae8; color: #55628c; }
+        .event.chaozhou { background: #dbe2cc; color: #5f7043; }
         .event.done { filter: saturate(0.45) brightness(1.15); }
         .event.done .event-label { opacity: 0.7; }
         .event.done .event-name { opacity: 0.75; text-decoration: line-through; }
@@ -171,6 +172,7 @@
         .tag-sanya { background: #c8dcd8; color: #4a7a7c; }
         .tag-geren { background: #e8d0dc; color: #8a5a82; }
         .tag-aike { background: #d3dae8; color: #55628c; }
+        .tag-chaozhou { background: #dbe2cc; color: #5f7043; }
         .empty-table {
             text-align: center; padding: 32px;
             color: #8a8279; font-size: 13px;
@@ -381,6 +383,7 @@
         <div class="legend-item"><div class="legend-dot" style="background:#7a6548"></div>广哈</div>
         <div class="legend-item"><div class="legend-dot" style="background:#4a7a7c"></div>三亚</div>
         <div class="legend-item"><div class="legend-dot" style="background:#55628c"></div>艾科</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#5f7043"></div>潮州</div>
         <div class="legend-item"><div class="legend-dot" style="background:#8a5a82"></div>个人</div>
         <div class="legend-item" style="color:#8a8279">|</div>
         <div class="legend-item"><div class="legend-dot" style="background:#cfc8bd"></div>已完成</div>
@@ -747,6 +750,9 @@ let expenses = [
     // 09.16
     { id: 82, month: 9, day: 16, category: 'coffee',   amount: 12.90, note: '咖啡' },
     { id: 83, month: 9, day: 16, category: 'food',     amount: 3.50,  note: '早餐' },
+    // 09.20
+    { id: 84, month: 9, day: 20, category: 'coffee',   amount: 13.90, note: '咖啡' },
+    { id: 85, month: 9, day: 20, category: 'food',     amount: 1.50,  note: '早餐' },
 ];
 
 // ===== 任务数据 =====
@@ -862,7 +868,10 @@ let tasks = [
     { id: 104, name: "15#五金", project: "sanya", day: 16, month: 9, status: "normal", deadline: "09.16" },
     { id: 105, name: "显示器维修", project: "geren", day: 16, month: 9, status: "normal", deadline: "09.16" },
     // 09.23 任务（下周三）
-    { id: 106, name: "芭蕾试课（中午）", project: "geren", day: 23, month: 9, status: "normal", deadline: "09.23" }
+    { id: 106, name: "芭蕾试课（中午）", project: "geren", day: 23, month: 9, status: "normal", deadline: "09.23" },
+    // 09.20 任务（周日）
+    { id: 107, name: "总图深化（22日完成报建通提交技术审查）", project: "aike", day: 20, month: 9, status: "normal", deadline: "09.20" },
+    { id: 108, name: "完成北地块机房布置", project: "chaozhou", day: 20, month: 9, status: "normal", deadline: "09.20" }
 ];
 
 // 状态映射
@@ -935,7 +944,7 @@ function renderCalendar() {
             const event = document.createElement('div');
             const statusInfo = statusMap[task.status] || statusMap.normal;
             event.className = `event ${task.project} ${statusInfo.calendarClass}`;
-            const labelMap = { guangha: '广哈', sanya: '三亚', aike: '艾科', geren: '个人' };
+            const labelMap = { guangha: '广哈', sanya: '三亚', aike: '艾科', chaozhou: '潮州', geren: '个人' };
             const label = labelMap[task.project] || '';
             event.innerHTML = `<span class="event-label">${label}</span><span class="event-name">${task.name}</span>`;
             day.appendChild(event);
@@ -951,14 +960,14 @@ function renderTable() {
         tbody.innerHTML = '<tr><td colspan="3" class="empty-table">🎉 所有任务已完成！</td></tr>';
         return;
     }
-    const projectOrder = { guangha: 0, sanya: 1, aike: 2, geren: 3 };
+    const projectOrder = { guangha: 0, sanya: 1, aike: 2, chaozhou: 3, geren: 4 };
     const sortedTasks = [...activeTasks].sort((a, b) =>
         (projectOrder[a.project] || 99) - (projectOrder[b.project] || 99)
     );
     sortedTasks.forEach(task => {
         const tr = document.createElement('tr');
         const statusInfo = statusMap[task.status] || statusMap.normal;
-        const labelMap = { guangha: '广哈', sanya: '三亚', aike: '艾科', geren: '个人' };
+        const labelMap = { guangha: '广哈', sanya: '三亚', aike: '艾科', chaozhou: '潮州', geren: '个人' };
         const label = labelMap[task.project] || '';
         tr.innerHTML = `
             <td><span class="project-tag tag-${task.project}">${label}</span>${task.name}</td>
